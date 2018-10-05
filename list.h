@@ -21,6 +21,17 @@ typedef struct {
 }Llista;
 
 
+
 Llista		LLISTABID_crea ();
+int			LLISTABID_consulta (Llista l, int * e);
+int 		LLISTABID_elimina (Llista * l);
+int 		LLISTABID_avanca (Llista * l);
+int 		LLISTABID_retrocedeix (Llista * l);
+int 		LLISTABID_vesInici (Llista * l);
+int 		LLISTABID_vesFinal (Llista * l);
+int 		LLISTABID_buida (Llista l);
+int 		LLISTABID_inici (Llista l);
+int 		LLISTABID_final (Llista l);
+void 		LLISTABID_destrueix (Llista * l);
 
 #endif //LLISTABIDIRECCIONAL_LIST_H
