@@ -10,9 +10,9 @@ int main (int argc, char** argv) {
     list = LLISTABID_crea();
 
     error= LLISTABID_vesInici(&list);
-    error = LLISTABID_inserirDavant(&list, 5);
-    error = LLISTABID_inserirDavant(&list, 4);
-    error = LLISTABID_inserirDavant(&list, 6);
+    error = LLISTABID_inserirOrd(&list, 5);
+    error = LLISTABID_inserirOrd(&list, 4);
+    error = LLISTABID_inserirOrd(&list, 6);
 
 
     error= LLISTABID_vesInici(&list);
