@@ -51,7 +51,7 @@ int	LLISTABID_consulta (Llista l) {
 
 
 //Funció per inserir un nou node davant/esquerra del PDI amb el contingut element.
-int LLISTABID_inserirDavant (Llista * l, int i) {
+int LLISTABID_inserirOrd (Llista * l, int i) {
     Node * n;
 
     if (l->pdi == l->pri) return 0;

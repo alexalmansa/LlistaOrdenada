@@ -6,6 +6,8 @@
 #define LLISTABIDIRECCIONAL_LIST_H
 
 #include <stdlib.h>
+#include <stdio.h>
+
 
 typedef struct _node {
     int num;
@@ -23,7 +25,9 @@ typedef struct {
 
 
 Llista		LLISTABID_crea ();
-int			LLISTABID_consulta (Llista l, int * e);
+int         LLISTABID_inserirOrd (Llista * l, int i);
+
+int			LLISTABID_consulta (Llista l);
 int 		LLISTABID_elimina (Llista * l);
 int 		LLISTABID_avanca (Llista * l);
 int 		LLISTABID_retrocedeix (Llista * l);
