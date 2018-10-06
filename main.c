@@ -6,6 +6,7 @@
 int main (int argc, char** argv) {
     Llista list;
     int error;
+<<<<<<< HEAD
     list = LLISTABID_crea();                                        //creació de la llista
 
     printf("Elements inicials a la llista %d\n", list.elements);    //printem quants elements hi ha inicialment
@@ -29,6 +30,28 @@ int main (int argc, char** argv) {
 
     printf("Elements Finals a la llista %d\n", list.elements);      //printem els elements que han quedat finalment a la llista
 
+=======
+    int i = 0;
+    list = LLISTABID_crea();
+>>>>>>> development
 
+    error= LLISTABID_vesInici(&list);
+    error = LLISTABID_inserirOrd(&list, 5);
+    error = LLISTABID_inserirOrd(&list, 4);
+    error = LLISTABID_inserirOrd(&list, 6);
+
+
+    error= LLISTABID_vesInici(&list);
+
+    error = LLISTABID_consulta(list);
+    error = LLISTABID_avanca(&list);
+    error = LLISTABID_consulta(list);
+    error = LLISTABID_avanca(&list);
+    error = LLISTABID_consulta(list);
+    error = LLISTABID_avanca(&list);
+
+    printf("ELEMENTS %d\n", list.elements);
+
+    printf("%d\n", error);
 
 }
