@@ -35,17 +35,50 @@ Llista	LLISTABID_crea () {
 
 
 //Funció per consultar el int situat sobre el PDI de la nostre llista.
-int	LLISTABID_consulta (Llista l, int* e) {
+int	LLISTABID_consulta (Llista l) {
 
-    if (l.pdi == l.pri || l.pdi == l.ult) {
-        e->rightNumber = -1;
-        e->leftNumber = -1;
-        return 0;
-    } else {
-        *e = l.pdi->e;
+    int e;
+    if(l.pdi->ant != NULL && l.pdi->seg != NULL){
+        e = l.pdi->num;
+        printf("Numero: %d \n",e);
         return 1;
     }
+
+    return 0;
+
 }
+
+
+
+//Funció per inserir un nou node davant/esquerra del PDI amb el contingut element.
+int LLISTABID_inserirDavant (Llista * l, int i) {
+    Node * n;
+
+    if (l->pdi == l->pri) return 0;
+
+    n = (Node*) malloc (sizeof(Node));
+
+    if (n == NULL) return 0;
+    int found = 0;
+    l->pdi = l->pri->seg;
+    while (found == 0 && l->pdi->seg != NULL){
+        if(l->pdi->num <= i){
+            l->pdi = l->pdi->seg;
+        } else{
+            found= 1;
+        }
+    }
+    n->num = i;
+    n->seg = l->pdi;
+    n->ant = l->pdi->ant;
+
+    l->pdi->ant->seg = n;
+    l->pdi->ant = n;
+    l->elements++;
+
+    return 1;
+}
+
 
 //Funció per eliminar un node de la nostre llista.
 int LLISTABID_elimina (Llista * l) {
